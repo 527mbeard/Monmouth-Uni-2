@@ -8,22 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/zyt7quh.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="navbar" id="top">
     <a class="brand" href="#home" aria-label="Monmouth University home">
-      <img src="assets/monmouth-logo.png" alt="Monmouth University M logo">
+      <img src="assets/monmouth-logoy.png" alt="Monmouth University M logo">
     </a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-links">
+      <a href="#welcome">About</a>
       <a href="#programs">Programs</a>
-      <a href="#admissions">Admissions</a>
-      <a href="#cost">Cost</a>
       <a href="#student-life">Student Life</a>
+      <a href="#cost">Admissions & Cost</a>
+     
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -36,7 +38,7 @@
         <p class="eyebrow">LEARN THE LATEST</p>
         <h1>Discover Your Place<br>At Monmouth</h1>
         <p>Discover your next four years here in West Long Branch, New Jersey</p>
-        <a class="button dark-button" href="#welcome">Learn the Latest</a>
+        <a class="button dark-button">Learn the Latest</a>
       </div>
     </section>
 
@@ -51,15 +53,15 @@
 
         <div class="facts">
           <div class="fact">
-            <span class="fact-icon">⌖</span>
+            <img src="assets/map-emoji.png" class="fact-icon" alt="Monmouth University entrance">
             <div><strong>Location</strong><span>West Long Branch, NJ</span></div>
           </div>
           <div class="fact">
-            <span class="fact-icon">⌂</span>
+            <img src="assets/house-emoji.png" class="fact-icon" alt="Monmouth University building">
             <div><strong>Type</strong><span>Private University</span></div>
           </div>
           <div class="fact">
-            <span class="fact-icon">◉</span>
+            <img src="assets/winning-emoji.png" class="fact-icon" alt="Award winning">
             <div><strong>What Makes Us Unique</strong><span>Award Winning Coastal Campus</span></div>
           </div>
         </div>
@@ -110,10 +112,6 @@
     <section class="student-life" id="student-life">
       <div class="student-heading section-shell">
         <h2>Student Life</h2>
-        <div class="shore-copy">
-          <em>Life by the Shore</em>
-          <span>From campus events to the beach,<br>Monmouth brings the best of both worlds</span>
-        </div>
         <a class="button dark-button" href="#contact">Read the full post</a>
       </div>
 
@@ -152,7 +150,7 @@
         </div>
       </div>
 
-      <div class="tabs-wrap section-shell" id="admissions">
+      <div class="tabs-wrap section-shell">
         <div class="tabs" role="tablist" aria-label="Plan your next chapter">
           <button class="tab active" role="tab" aria-selected="true" data-tab="cost-panel">Tuition &amp; Costs</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="admissions-panel">Admissions</button>
