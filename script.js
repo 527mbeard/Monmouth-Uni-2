@@ -129,8 +129,47 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach(card => {
 
       card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+
+      const openCard = () => {
+        const title = card.querySelector("h3").textContent.replace(/\s+/g, " ").trim();
+        const image = card.querySelector("img");
+
+        document.querySelector("#modal-category").textContent = card.dataset.category;
+        document.querySelector("#modal-title").textContent = title;
+        document.querySelector("#modal-description").textContent = card.dataset.detail;
+        document.querySelector("#modal-image").src = image.src;
+        document.querySelector("#modal-image").alt = image.alt;
+        document.querySelector("#info-modal").hidden = false;
+        document.body.classList.add("modal-open");
+        document.querySelector(".modal-close").focus();
+      };
+
+      card.addEventListener("click", openCard);
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openCard();
+        }
+      });
 
     });
+
+  const infoModal = document.querySelector("#info-modal");
+  const closeModal = () => {
+    infoModal.hidden = true;
+    document.body.classList.remove("modal-open");
+  };
+
+  infoModal.querySelectorAll("[data-modal-close]").forEach(element => {
+    element.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !infoModal.hidden) {
+      closeModal();
+    }
+  });
 
 
 

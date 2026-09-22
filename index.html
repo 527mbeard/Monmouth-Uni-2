@@ -74,7 +74,7 @@
     <section class="programs section-shell" id="programs">
       <h2 class="section-title">Program Spotlights</h2>
       <div class="program-grid">
-        <article class="spotlight-card business-card">
+        <article class="spotlight-card business-card" data-category="Program spotlight" data-detail="Monmouth's business programs help students connect theory with practice. Explore areas such as accounting, finance, marketing, and management while building confidence through projects, internships, and professional experiences.">
           <img src="assets/business.jpg" alt="Business building">
           <div class="spotlight-info">
             <h3>Business</h3>
@@ -82,7 +82,7 @@
           </div>
         </article>
 
-        <article class="spotlight-card medicine-card">
+        <article class="spotlight-card medicine-card" data-category="Program spotlight" data-detail="Prepare for a future in healthcare through focused study in the sciences and opportunities to apply what you learn. Develop the knowledge, empathy, and practical foundation needed to support patients and communities.">
           <img src="assets/medicine.jpg" alt="Medicine building">
           <div class="spotlight-info">
             <h3>Medicine</h3>
@@ -90,7 +90,7 @@
           </div>
         </article>
 
-        <article class="spotlight-card law-card">
+        <article class="spotlight-card law-card" data-category="Program spotlight" data-detail="Study the ideas and systems that shape justice, policy, and society. Strengthen your writing, research, public speaking, and reasoning skills as you learn to examine challenging issues from multiple perspectives.">
           <img src="assets/law.jpg" alt="Law building">
           <div class="spotlight-info">
             <h3>Law</h3>
@@ -98,7 +98,7 @@
           </div>
         </article>
 
-        <article class="spotlight-card communications-card">
+        <article class="spotlight-card communications-card" data-category="Program spotlight" data-detail="Bring your ideas to life across digital media, journalism, public relations, and creative production. Gain experience shaping messages for real audiences while developing your own voice as a communicator.">
           <img src="assets/communications.jpg" alt="Communications building">
           <div class="spotlight-info">
             <h3>Communications</h3>
@@ -116,21 +116,21 @@
       </div>
 
       <div class="life-grid section-shell">
-        <article class="life-card">
+        <article class="life-card" data-category="Student life" data-detail="Whether you compete on a team or cheer from the stands, athletics are an important part of the Monmouth community. Follow the Hawks, build lasting friendships, and enjoy the energy of game day on campus.">
           <img src="assets/student-life.jpg" alt="Campus garden">
           <div class="life-info">
             <h3>Athletics</h3>
             <p>Stay active, support the Hawks, and find ways to make competition part of your college experience.</p>
           </div>
         </article>
-        <article class="life-card">
+        <article class="life-card" data-category="Student life" data-detail="Campus organizations give you room to try something new and find people who share your interests. Take part in student leadership, cultural groups, service activities, and communities that extend your experience beyond class.">
           <img src="assets/student-life.jpg" alt="Campus garden">
           <div class="life-info">
             <h3>Clubs &amp;<br>Organizations</h3>
             <p>Meet people with shared interests and discover communities that make campus feel like home.</p>
           </div>
         </article>
-        <article class="life-card">
+        <article class="life-card" data-category="Student life" data-detail="Make the most of campus through traditions, performances, social gatherings, and seasonal activities. Student events create easy opportunities to meet new people and build memories throughout your time at Monmouth.">
           <img src="assets/student-life.jpg" alt="Campus garden">
           <div class="life-info">
             <h3>Events</h3>
@@ -263,6 +263,17 @@
       </div>
     </section>
   </main>
+
+  <div class="info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" type="button" aria-label="Close information window" data-modal-close>&times;</button>
+      <p class="modal-category" id="modal-category"></p>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="">
+      <p id="modal-description"></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
