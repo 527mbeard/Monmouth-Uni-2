@@ -269,33 +269,35 @@ h2 {
 
 /* PROGRAMS */
 .programs {
-  min-height: calc(100svh - var(--nav-height));
+  height: calc(100svh - var(--nav-height));
+  min-height: 0;
   width: 100%;
   max-width: none;
   margin-inline: 0;
-  padding-bottom: 24px;
+  padding-bottom: 18px;
 }
 
 .section-title {
   text-align: center;
-  margin: 26px 0 32px;
-  font-size: clamp(2.8rem, 4vw, 4rem);
+  margin: 12px 0 16px;
+  font-size: clamp(2.4rem, 3.5vw, 3.4rem);
 }
 
 .program-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, minmax(280px, 1fr));
-  width: 100%;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: calc(100% - 78px);
+  width: calc(100% - 24px);
   max-width: none;
   margin-inline: auto;
-  gap: 38px;
+  gap: 18px;
 }
 
 .spotlight-card {
   position: relative;
   overflow: hidden;
-  border: 26px solid var(--navy);
+  border: 12px solid var(--navy);
   cursor: pointer;
   min-height: 0;
 }
@@ -959,6 +961,12 @@ h2 {
   .program-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, minmax(220px, 1fr));
+    height: auto;
+  }
+
+  .programs {
+    height: auto;
+    min-height: calc(100svh - var(--nav-height));
   }
 
   .spotlight-card {
