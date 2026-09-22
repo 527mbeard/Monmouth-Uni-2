@@ -11,7 +11,8 @@
   --yellow: #f5c542;
   --white: #ffffff;
   --text: #062f5c;
-  --nav-height: 76px;
+  --nav-height: 106px;
+  --connected-gap: 60px;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", Arial, sans-serif;
 }
@@ -171,14 +172,11 @@ h2 {
   width: min(1180px, calc(100% - 40px));
   margin: auto;
   color: white;
-  margin-left:30px;
+  margin-left: 62px;
 }
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin: 0 0 8px;
-  opacity: .85;
+  display: none;
 }
 
 .hero h1 {
@@ -196,19 +194,25 @@ h2 {
 /* WELCOME */
 .welcome {
   min-height: calc(100svh - var(--nav-height));
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 58px;
-  padding-block: 48px 0;
+  gap: 0;
+  padding-block: 0;
+  background: linear-gradient(to right, var(--navy) 0 50%, var(--white) 50% 100%);
 }
 
 .welcome-image {
-  width: 100%;
-  max-width: 520px;
-  max-height: 480px;
-  aspect-ratio: 1.2 / 1;
-  border: 11px solid var(--navy);
+  width: calc(100% - 48px);
+  max-width: none;
+  height: calc(100% - 48px);
+  max-height: none;
+  aspect-ratio: auto;
+  margin: 24px;
+  border: 26px solid var(--navy);
   overflow: hidden;
   align-self: center;
   justify-self: center;
@@ -221,8 +225,7 @@ h2 {
 
 .welcome-copy {
   align-self: center;
-  padding-block: 46px;
-  padding-right: 25px;
+  padding: 46px clamp(40px, 6vw, 90px);
 }
 
 .welcome-copy h2 {
@@ -275,23 +278,24 @@ h2 {
 
 .section-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 26px 0 32px;
+  font-size: clamp(2.8rem, 4vw, 4rem);
 }
 
 .program-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px 200px;
-  width: calc(100% - 24px);
+  grid-template-rows: repeat(2, minmax(280px, 1fr));
+  width: 100%;
   max-width: none;
   margin-inline: auto;
-  gap: 26px;
+  gap: 38px;
 }
 
 .spotlight-card {
   position: relative;
   overflow: hidden;
-  border: 10px solid var(--navy);
+  border: 26px solid var(--navy);
   cursor: pointer;
   min-height: 0;
 }
@@ -410,6 +414,7 @@ h2 {
 .life-card:hover .life-info p {
   opacity: 1;
   transform: translateY(0);
+}
 
 .spotlight-card:hover .spotlight-info,
 .life-card:hover .life-info {
@@ -420,13 +425,12 @@ h2 {
 .communications-card:hover .spotlight-info {
   transform: translateY(15px);
 }
-}
 
 /* STUDENT LIFE */
 .student-life {
   background: white;
   min-height: calc(100svh - var(--nav-height));
-  padding-block: 30px 72px;
+  padding-block: 0 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -437,7 +441,8 @@ h2 {
   grid-template-columns: 1fr 1fr auto;
   align-items: center;
   gap: 25px;
-  margin-bottom: 20px;
+  min-height: 220px;
+  margin-bottom: 0;
   max-width: none;
   width: 100%;
   padding-inline: clamp(24px, 5vw, 70px);
@@ -470,7 +475,7 @@ h2 {
 
 .life-card {
   height: auto;
-  min-height: 360px;
+  min-height: 500px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -482,6 +487,10 @@ h2 {
   z-index: 1;
   inset: 11px;
   border: 1px solid rgba(255,255,255,.8);
+}
+
+.life-card::after {
+  opacity: .58;
 }
 
 .life-info h3 {
@@ -653,16 +662,18 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 0;
-  min-height: calc(100svh - var(--nav-height));
+  height: calc(100svh - var(--nav-height));
+  min-height: 0;
   background: var(--navy);
   width: 100%;
 }
 
 .mailing-card {
-  width: min(600px, 100%);
-  min-height: 440px;
-  padding: 70px 50px;
-  margin-left: auto;
+  width: calc(100% - (var(--connected-gap) * 2));
+  height: calc(100% - (var(--connected-gap) * 2));
+  min-height: 0;
+  padding: 70px 64px;
+  margin: var(--connected-gap);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -671,19 +682,19 @@ h2 {
 }
 
 .mailing-card h2 {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
 }
 
 .mailing-card > p {
   max-width: 380px;
   margin: 10px auto 18px;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 #mailing-form {
   background: var(--navy);
-  padding: 18px;
+  padding: 24px 26px;
   text-align: left;
 }
 
@@ -692,13 +703,13 @@ h2 {
   color: white;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 18px;
+  font-size: 21px;
   margin-bottom: 7px;
 }
 
 #mailing-form input {
   width: 100%;
-  height: 34px;
+  height: 36px;
   border: 1px solid rgba(255,255,255,.45);
   background: transparent;
   color: white;
@@ -710,6 +721,7 @@ h2 {
   width: 100%;
   border: 0;
   border-radius: 7px;
+  min-height: 36px;
   padding: 8px;
   background: white;
   color: var(--navy);
@@ -734,7 +746,8 @@ h2 {
 }
 
 .aerial-image {
-  min-height: 440px;
+  height: 100%;
+  min-height: 0;
 }
 
 .aerial-image img {
@@ -917,10 +930,13 @@ h2 {
   .welcome {
     grid-template-columns: 1fr;
     gap: 30px;
+    background: var(--white);
   }
 
   .welcome-image {
     max-width: 650px;
+    height: auto;
+    aspect-ratio: 1.2 / 1;
     margin: auto;
   }
 
@@ -930,7 +946,11 @@ h2 {
 
   .program-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 170px 170px;
+    grid-template-rows: repeat(2, minmax(220px, 1fr));
+  }
+
+  .spotlight-card {
+    border-width: 18px;
   }
 
   .business-card,
@@ -961,15 +981,21 @@ h2 {
 
   .connected {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
   }
 
   .mailing-card {
-    width: 100%;
-    margin: 0;
+    width: calc(100% - (var(--connected-gap) * 2));
+    height: auto;
+    min-height: 600px;
+    margin: var(--connected-gap);
+    padding: 48px 24px;
   }
 
   .aerial-image {
-    height: 350px;
+    height: clamp(360px, 80vw, 600px);
+    min-height: 0;
   }
 }
 
@@ -1017,6 +1043,10 @@ h2 {
     grid-template-rows: repeat(4, 180px);
   }
 
+  .spotlight-card {
+    border-width: 12px;
+  }
+
   .business-card,
   .medicine-card,
   .law-card,
@@ -1031,6 +1061,7 @@ h2 {
 
   .life-card {
     height: 300px;
+    min-height: 300px;
   }
 
   .chapter-hero {
