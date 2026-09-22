@@ -119,9 +119,6 @@ h2 {
 }
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   min-height: 42px;
   padding: 10px 28px;
   border-radius: 999px;

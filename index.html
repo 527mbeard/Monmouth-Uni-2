@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/zyt7quh.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,7 +39,7 @@
         <p class="eyebrow">LEARN THE LATEST</p>
         <h1>Discover Your Place<br>At Monmouth</h1>
         <p>Discover your next four years here in West Long Branch, New Jersey</p>
-        <a class="button dark-button" href="#welcome">Learn the Latest</a>
+        <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="#welcome">Learn the Latest</a>
       </div>
     </section>
 
@@ -66,7 +67,7 @@
           </div>
         </div>
 
-        <a class="button dark-button" href="#programs">Learn More</a>
+        <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="#programs">Learn More</a>
       </div>
     </section>
 
@@ -112,7 +113,7 @@
     <section class="student-life" id="student-life">
       <div class="student-heading section-shell">
         <h2>Student Life</h2>
-        <a class="button dark-button" href="https://www.monmouth.edu/student-life/" target="_blank">Read the full post</a>
+        <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="https://www.monmouth.edu/student-life/" target="_blank">Read the full post</a>
       </div>
 
       <div class="life-grid section-shell">
@@ -152,10 +153,10 @@
 
       <div class="tabs-wrap section-shell">
         <div class="tabs" role="tablist" aria-label="Plan your next chapter">
-          <button class="tab active" role="tab" aria-selected="true" data-tab="cost-panel">Tuition &amp; Costs</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="admissions-panel">Admissions</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="aid-panel">Financial Aid</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="housing-panel">Housing</button>
+          <button class="tab btn active" role="tab" aria-selected="true" data-tab="cost-panel">Tuition &amp; Costs</button>
+          <button class="tab btn" role="tab" aria-selected="false" data-tab="admissions-panel">Admissions</button>
+          <button class="tab btn" role="tab" aria-selected="false" data-tab="aid-panel">Financial Aid</button>
+          <button class="tab btn" role="tab" aria-selected="false" data-tab="housing-panel">Housing</button>
         </div>
 
         <div class="tab-panel active" id="cost-panel" role="tabpanel">
@@ -163,7 +164,7 @@
             <div class="price">$42,000</div>
             <strong>per year</strong>
             <small>(approximate for full-time students)</small>
-            <a class="button dark-button" href="https://www.monmouth.edu/tuition/" target="_blank">View Full Cost Breakdown</a>
+            <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="https://www.monmouth.edu/tuition/" target="_blank">View Full Cost Breakdown</a>
           </div>
           <div class="panel-copy">
             <h3>Tuition &amp; Costs</h3>
@@ -181,7 +182,7 @@
           <div class="price-box text-panel">
             <div class="big-label">Admissions</div>
             <p>Take the next step toward becoming a Monmouth student.</p>
-            <a class="button dark-button" href="https://www.monmouth.edu/admission/" target="_blank">Learn More</a>
+            <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="https://www.monmouth.edu/admission/" target="_blank">Learn More</a>
           </div>
           <div class="panel-copy">
             <h3>Admissions</h3>
@@ -199,7 +200,7 @@
           <div class="price-box text-panel">
             <div class="big-label">Financial Aid</div>
             <p>Find ways to make your Monmouth education more manageable.</p>
-            <a class="button dark-button" href="https://www.monmouth.edu/finaid/" target="_blank">Explore Aid</a>
+            <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="https://www.monmouth.edu/finaid/" target="_blank">Explore Aid</a>
           </div>
           <div class="panel-copy">
             <h3>Financial Aid Includes:</h3>
@@ -216,7 +217,7 @@
           <div class="price-box text-panel">
             <div class="big-label">Housing</div>
             <p>Find your home on campus and learn about residential life.</p>
-            <a class="button dark-button" href="https://www.monmouth.edu/reslife/" target="_blank">Explore Housing</a>
+            <a class="button btn d-inline-flex align-items-center justify-content-center dark-button" href="https://www.monmouth.edu/reslife/" target="_blank">Explore Housing</a>
           </div>
           <div class="panel-copy">
             <h3>Housing</h3>
@@ -239,8 +240,8 @@
         <p>Join the Monmouth University mailing list to get updates about financial aid, activities, events, and admissions.</p>
         <form id="mailing-form">
           <label for="email">Enter your email</label>
-          <input id="email" name="email" type="email" required>
-          <button class="submit-button" type="submit">Join mailing list</button>
+          <input class="form-control" id="email" name="email" type="email" required>
+          <button class="submit-button btn" type="submit">Join mailing list</button>
         </form>
         <p class="form-message" aria-live="polite"></p>
       </div>
@@ -256,8 +257,8 @@
       <div class="final-content">
         <h2>Your Monmouth Story<br>Starts Here</h2>
         <div>
-          <a class="button yellow-button" href="https://www.monmouth.edu/apply-now/" target="_blank">Apply Now</a>
-          <a class="button outline-button" href="https://www.monmouth.edu/visit/" target="_blank">Visit Campus</a>
+          <a class="button btn d-inline-flex align-items-center justify-content-center yellow-button" href="https://www.monmouth.edu/apply-now/" target="_blank">Apply Now</a>
+          <a class="button btn d-inline-flex align-items-center justify-content-center outline-button" href="https://www.monmouth.edu/visit/" target="_blank">Visit Campus</a>
         </div>
       </div>
     </section>
@@ -275,5 +276,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
