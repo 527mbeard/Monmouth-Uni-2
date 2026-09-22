@@ -8,15 +8,17 @@
   --blue: #07539a;
   --light-blue: #e5f2fb;
   --pale-blue: #f4f9fd;
+  --yellow: #f5c542;
   --white: #ffffff;
   --text: #062f5c;
+  --nav-height: 76px;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", Arial, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 76px;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
@@ -49,7 +51,7 @@ input {
 
 /* NAVBAR */
 .navbar {
-  height: 76px;
+  height: var(--nav-height);
   background: white;
   display: flex;
   align-items: center;
@@ -148,7 +150,7 @@ h2 {
 
 /* HERO */
 .hero {
-  min-height: 550px;
+  min-height: calc(100svh - var(--nav-height));
   position: relative;
   background: url("assets/hero.jpg") center / cover no-repeat;
   display: flex;
@@ -193,7 +195,7 @@ h2 {
 
 /* WELCOME */
 .welcome {
-  min-height: 570px;
+  min-height: calc(100svh - var(--nav-height));
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -264,7 +266,11 @@ h2 {
 
 /* PROGRAMS */
 .programs {
-  padding-bottom: 55px;
+  min-height: calc(100svh - var(--nav-height));
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-bottom: 24px;
 }
 
 .section-title {
@@ -276,6 +282,9 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 200px 200px;
+  width: calc(100% - 24px);
+  max-width: none;
+  margin-inline: auto;
   gap: 26px;
 }
 
@@ -416,8 +425,8 @@ h2 {
 /* STUDENT LIFE */
 .student-life {
   background: white;
-  min-height: calc(100vh - 76px);
-  padding-block: 64px 72px;
+  min-height: calc(100svh - var(--nav-height));
+  padding-block: 30px 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -429,6 +438,9 @@ h2 {
   align-items: center;
   gap: 25px;
   margin-bottom: 20px;
+  max-width: none;
+  width: 100%;
+  padding-inline: clamp(24px, 5vw, 70px);
 }
 
 .student-heading h2 {
@@ -449,11 +461,16 @@ h2 {
 .life-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 0;
+  max-width: none;
+  width: calc(100% - 24px);
+  margin-inline: auto;
+  min-height: calc(100svh - var(--nav-height) - 190px);
 }
 
 .life-card {
-  height: 360px;
+  height: auto;
+  min-height: 360px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -474,6 +491,7 @@ h2 {
 /* CHAPTER */
 .chapter {
   background: white;
+  min-height: calc(100svh - var(--nav-height));
   padding-bottom: 0;
 }
 
@@ -635,7 +653,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 0;
-  min-height: 440px;
+  min-height: calc(100svh - var(--nav-height));
   background: var(--navy);
   width: 100%;
 }
@@ -854,8 +872,12 @@ h2 {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  :root {
+    --nav-height: 68px;
+  }
+
   .navbar {
-    height: 68px;
+    height: var(--nav-height);
   }
 
   .menu-toggle {
@@ -955,6 +977,11 @@ h2 {
   .section-shell,
   .hero-content {
     width: min(100% - 24px, 1180px);
+  }
+
+  .programs {
+    width: 100%;
+    margin-inline: 0;
   }
 
   .navbar {
