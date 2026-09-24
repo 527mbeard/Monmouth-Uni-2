@@ -134,12 +134,69 @@ document.addEventListener("DOMContentLoaded", () => {
       const openCard = () => {
         const title = card.querySelector("h3").textContent.replace(/\s+/g, " ").trim();
         const image = card.querySelector("img");
+        const description = document.querySelector("#modal-description");
+        const detailParts = card.dataset.detail.split(" BREAK ");
 
         document.querySelector("#modal-category").textContent = card.dataset.category;
         document.querySelector("#modal-title").textContent = title;
-        document.querySelector("#modal-description").textContent = card.dataset.detail;
+        description.replaceChildren();
+
+        if (title === "Athletics") {
+          const athleticsParts = card.dataset.detail.split(" BREAK ");
+          const introduction = document.createElement("p");
+          introduction.textContent = athleticsParts[0];
+          description.append(introduction);
+
+          athleticsParts.slice(1).forEach(section => {
+            const lines = section.split("|");
+            const season = document.createElement("p");
+            season.textContent = lines.shift().trim();
+            description.append(season);
+
+            const sportsList = document.createElement("ul");
+            lines
+              .filter(sport => sport.trim())
+              .forEach(sport => {
+                const listItem = document.createElement("li");
+                listItem.textContent = sport.trim();
+                sportsList.append(listItem);
+              });
+            description.append(sportsList);
+          });
+        } else {
+          const introduction = document.createElement("p");
+          introduction.textContent = detailParts[0];
+          description.append(introduction);
+        }
+
+        if (title !== "Athletics" && detailParts[1]) {
+          const programDetails = detailParts[1].split(" like ");
+          const programIntroduction = document.createElement("p");
+          programIntroduction.textContent = `${programDetails[0]} include:`;
+          description.append(programIntroduction);
+
+          const majors = programDetails[1]
+            .replace(/\.$/, "")
+            .replace(/\s+and\s+(?=[^,]+$)/, ", ")
+            .split(",")
+            .map(major => major.trim());
+          const majorList = document.createElement("ul");
+
+          majors.forEach(major => {
+            const listItem = document.createElement("li");
+            listItem.textContent = major;
+            majorList.append(listItem);
+          });
+
+          description.append(majorList);
+        }
         document.querySelector("#modal-image").src = image.src;
         document.querySelector("#modal-image").alt = image.alt;
+        const modalLink = document.querySelector("#modal-link");
+        const cardLink = (card.dataset.link || "").trim();
+
+        modalLink.href = cardLink;
+        modalLink.hidden = !card.classList.contains("spotlight-card") || !cardLink;
         document.querySelector("#info-modal").hidden = false;
         document.body.classList.add("modal-open");
         document.querySelector(".modal-close").focus();

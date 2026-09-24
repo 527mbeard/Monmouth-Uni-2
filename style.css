@@ -782,11 +782,13 @@ h2 {
   display: grid;
   place-items: center;
   padding: 24px;
+  isolation: isolate;
 }
 
 .modal-backdrop {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: rgba(0, 20, 48, .82);
 }
 
@@ -826,9 +828,9 @@ h2 {
 }
 
 .modal-content h2 {
-  margin: 0 0 22px;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: .95;
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1;
 }
 
 .modal-content img {
@@ -838,10 +840,37 @@ h2 {
 }
 
 .modal-content #modal-description {
-  max-width: 620px;
-  margin: 0;
+  max-width: 62ch;
+  padding: 18px 20px;
+  border-left: 4px solid var(--blue);
+  background: var(--pale-blue);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.85;
+  letter-spacing: .01em;
+}
+
+.modal-content #modal-description p {
+  margin: 0 0 14px;
+}
+
+.modal-content #modal-description p:last-child {
+  margin-bottom: 0;
+}
+
+.modal-content #modal-description .modal-section-heading {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.modal-content #modal-description ul {
+  margin: -2px 0 0;
+  padding-left: 22px;
+}
+
+.modal-link {
+  margin-top: 22px;
 }
 
 /* FINAL CTA */
